@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>先礼后兵 · 匹克球礼仪与规则 | 第一次上场不社死</title>
-<meta name="description" content="匹克球赛场礼仪 + 竞技规则轻松解读：年度修订雷达、易误解规则澄清卡、球场不成文法与中国本地化。规则印在手册里，规矩长在场地上。">
+<meta name="description" content="匹克球赛场礼仪 + 竞技规则轻松解读：年度修订雷达、按阶段拆解的易误解规则、球场口令与不成文法、中国本地化。规则印在手册里，规矩长在场地上。">
 <meta property="og:title" content="先礼后兵 · 匹克球礼仪与规则">
-<meta property="og:description" content="年度修订雷达 + 易误解规则澄清卡 + 球场不成文法：第一次上场不社死">
+<meta property="og:description" content="年度修订雷达 + 阶段化易误解规则 + 球场口令与不成文法：第一次上场不社死">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://liyuankui.github.io/xianlihoubing/">
 <meta property="og:image" content="https://liyuankui.github.io/xianlihoubing/og-cover.png">
@@ -26,11 +26,9 @@
     --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;line-break:strict;}
-  html{scroll-behavior:smooth;}
   body{background:#ece7db;font-family:var(--sans);color:var(--ink);}
   .wrap{width:min(1060px,94vw);margin:0 auto;}
 
-  /* nav */
   nav{position:sticky;top:0;z-index:10;background:rgba(247,243,234,.94);
       backdrop-filter:blur(6px);border-bottom:1px solid var(--hair);}
   .nav-in{display:flex;align-items:center;gap:14px;padding:12px 0;flex-wrap:wrap;}
@@ -41,7 +39,6 @@
   .nav-in a:hover{background:var(--card);color:var(--ink);}
   .nav-in .fam{margin-left:auto;font-size:12px;color:var(--muted);text-decoration:none;}
 
-  /* hero */
   header.hero{padding:58px 0 40px;border-bottom:1px solid var(--hair);}
   .kicker{font-size:12.5px;letter-spacing:.42em;color:var(--muted);font-weight:600;}
   h1{font-family:var(--serif);font-weight:900;font-size:clamp(34px,5.5vw,52px);
@@ -57,12 +54,18 @@
   .src-pills span{font-size:11.5px;color:var(--ink);background:var(--card);
                   border:1px solid var(--hair);border-radius:999px;padding:4px 12px;}
 
-  /* sections */
   section{padding:46px 0 8px;}
   .sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px;}
   h2{font-family:var(--serif);font-weight:900;font-size:30px;letter-spacing:.06em;}
   h2 em{font-style:normal;}
   .sec-sub{font-size:13.5px;color:var(--muted);margin-bottom:22px;line-height:1.8;max-width:720px;}
+
+  .stage-h{margin:30px 0 14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .stage-h .no{font-family:var(--serif);font-weight:900;font-size:15px;
+               color:var(--li);letter-spacing:.14em;}
+  .stage-h .nm{font-size:16.5px;font-weight:750;letter-spacing:.05em;}
+  .stage-h .hint{font-size:12px;color:var(--muted);}
+  .stage-h:first-of-type{margin-top:6px;}
 
   .grid{display:grid;gap:14px;}
   .g2{grid-template-columns:repeat(2,1fr);}
@@ -88,6 +91,7 @@
   .ref{font-size:11.5px;color:var(--muted);letter-spacing:.04em;margin-top:12px;
        line-height:1.7;}
   .ref b{color:var(--ink);}
+  .ref a{color:var(--muted);}
   .stars{font-size:12px;color:var(--bing);letter-spacing:.1em;margin-top:10px;}
 
   .radar .card{border-top:3px solid var(--bing);}
@@ -104,6 +108,16 @@
   .etq .why{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.7;}
   .do-don't{font-size:12px;letter-spacing:.1em;font-weight:700;}
   .do{color:#5a7d54;} .dont{color:var(--bing);}
+  .etq .call{font-family:var(--serif);font-weight:900;color:var(--li);
+             font-size:14.5px;letter-spacing:.04em;}
+
+  .mantra{margin:44px 0 8px;border-top:1px solid var(--hair);
+          border-bottom:1px solid var(--hair);padding:36px 0;text-align:center;}
+  .mantra .m{font-family:var(--serif);font-weight:900;
+             font-size:clamp(20px,3.2vw,28px);letter-spacing:.1em;line-height:1.7;}
+  .mantra .m em{font-style:normal;color:var(--li);}
+  .mantra small{display:block;margin-top:12px;font-size:12px;color:var(--muted);
+                letter-spacing:.2em;}
 
   .cn .card{border-top:3px solid var(--zhong);}
 
@@ -131,7 +145,7 @@
   <span class="logo">先礼后<em>兵</em></span>
   <a href="#radar">修订雷达</a>
   <a href="#rules">易误解规则</a>
-  <a href="#etiquette">球场不成文法</a>
+  <a href="#etiquette">口令与礼数</a>
   <a href="#china">中国本地化</a>
   <a class="fam" href="https://liyuankui.github.io/sanbanfu/" target="_blank">三板斧 · 技术矩阵 →</a>
 </div></nav>
@@ -144,7 +158,7 @@
     <small>—— 三板斧家族 · 羽毛球 / 乒乓球 edition 制作中</small>
   </div>
   <div class="src-pills">
-    <span>📜 规则：USAP 官方手册（2025 版 + 修订文档）</span>
+    <span>📜 规则：<a href="https://usapickleball.org/rules/" target="_blank" style="color:inherit">USAP 官方规则手册</a></span>
     <span>🇨🇳 中国：体育总局网球中心 / GPF 中文手册</span>
     <span>🤝 惯例：公开场地球友圈通行</span>
   </div>
@@ -160,14 +174,14 @@
       <div class="card">
         <span class="year">2026</span><div class="tags"><span class="tag intl">国际</span><span class="tag draft">第三方解读</span></div>
         <h3>冻结规则取消</h3>
-        <p><span style="white-space:nowrap"><b>14.A.2</b>：</span>rally scoring（每球得分制）下，<b>接发方也能拿下制胜分</b>——原先只有发球方能终结比赛，现双方皆可。打每球得分制的朋友：落后方的翻盘窗口开了。</p>
-        <div class="ref">详见 <a href="https://forwrd.co/blogs" target="_blank">Forwrd 2026 计分指南</a> · 以 <a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">USAP 官方手册</a> 为准</div>
+        <p><b>14.A.2</b>：rally scoring（每球得分制）下，<b>接发方也能拿下制胜分</b>——原先只有发球方能终结比赛，现双方皆可。打每球得分制的朋友：落后方的翻盘窗口开了。</p>
+        <div class="ref">详见 <a href="https://usapickleball.org/rules/" target="_blank">USAP 官方规则</a> · 以官方发布为准</div>
       </div>
       <div class="card">
         <span class="year">2026</span><div class="tags"><span class="tag intl">国际</span><span class="tag draft">第三方解读</span></div>
         <h3>口袋里的备用球 = 失分</h3>
         <p>身上<b>可见的备用球</b>（如裤兜露出）在活球期判 fault。换球习惯改一改：备用球放场边，别带身上打球。</p>
-        <div class="ref">多方 2026 修订解读一致提及 · 以官方手册为准</div>
+        <div class="ref">多方 2026 修订解读一致提及 · 以官方发布为准</div>
       </div>
       <div class="card">
         <span class="year">2026</span><div class="tags"><span class="tag intl">国际</span><span class="tag draft">第三方解读</span></div>
@@ -179,7 +193,7 @@
         <span class="year">2025 · 官方</span><div class="tags"><span class="tag intl">国际</span></div>
         <h3>每球得分制入册</h3>
         <p>Rally scoring 作为<b>可选赛制</b>正式写进规则书（14 节）：传统 11 分 side-out 制之外的另一扇门——2026 再取消冻结，是这个故事的续集。</p>
-        <div class="ref">来源：USAP <a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">2025 Rulebook Change Document</a></div>
+        <div class="ref">来源：<a href="https://usapickleball.org/rules/" target="_blank">USAP 官方规则手册（2025 版 + 修订文档）</a></div>
       </div>
       <div class="card y2025">
         <span class="year">2025 · 官方</span><div class="tags"><span class="tag intl">国际</span></div>
@@ -191,24 +205,66 @@
         <span class="year">2025 · 官方</span><div class="tags"><span class="tag cn">中国</span></div>
         <h3>中国：网球中心接管</h3>
         <p>匹克球自 2025 年写入体育总局<b>网球运动管理中心</b>职责：规则、团体标准、积分排名、教练/裁判认证、全国锦标赛与 CPC 中国匹克球巡回赛——有娘家了。</p>
-        <div class="ref">来源：<a href="https://www.sport.gov.cn/xqzx" target="_blank">体育总局小球中心公告</a>及中匹在线行业报道</div>
+        <div class="ref">来源：<a href="https://www.sport.gov.cn/xqzx" target="_blank">体育总局</a>及中匹在线行业报道</div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 易误解规则 ============ -->
+  <!-- ============ 易误解规则（按阶段） ============ -->
   <section id="rules">
     <div class="sec-head"><h2>易误解<em style="color:var(--li)">规则</em></h2></div>
-    <p class="sec-sub">老球友最常踩的坑，按社死指数排序。每张卡：❌ 大家以为 → ✅ 手册其实 → 裁判视角一句话。条款号给到节级，细则以<a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">官方手册</a>为准。</p>
+    <p class="sec-sub">老球友最常踩的坑——<b>按一分的生命周期排</b>：开局之前 → 发球与接发 → 相持之中。每张卡：❌ 大家以为 → ✅ 手册其实 → 裁判视角一句话。条款号给到节级，细则以<a href="https://usapickleball.org/rules/" target="_blank">官方手册</a>为准。</p>
+
+    <div class="stage-h"><span class="no">壹</span><span class="nm">开局之前</span><span class="hint">球还没发，先别社死</span></div>
     <div class="grid g2">
+      <div class="card">
+        <div class="tags"><span class="tag rule">规则</span></div>
+        <h3>计分：先问哪种分制</h3>
+        <div class="mis"><b>❌ 以为</b><p>跟排球/羽毛球一样每球得分。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>传统 11 分制（side-out）<b>唯发球方得分</b>；双打发球序轮两人才换边。2025 起每球得分制成为可选赛制——开赛前问清。</p></div>
+        <div class="ref">裁判视角：先问「今天打哪种分制」，再问「几比几」。<b>§4.B 计分</b></div>
+        <div class="stars">社死指数 ★★★</div>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag rule">规则</span></div>
+        <h3>叫分：发球前喊出来</h3>
+        <div class="mis"><b>❌ 以为</b><p>比分记心里，开打就行。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>发球前须<b>完整喊分</b>（双打三段：发球方分-接发方分-发球序），开局是「0-0-2」——这既是规则也是礼。</p></div>
+        <div class="ref">裁判视角：喊分是匹克球的心跳声，不喊等于没开球。<b>§4.D</b></div>
+        <div class="stars">社死指数 ★★★</div>
+      </div>
+    </div>
+
+    <div class="stage-h"><span class="no">贰</span><span class="nm">发球与接发</span><span class="hint">前两拍是「地面礼」，抢了就是 fault</span></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="tags"><span class="tag rule">规则</span></div>
+        <h3>发球：腰下、上扬、斜对角</h3>
+        <div class="mis"><b>❌ 以为</b><p>上手发球像网球那样砸。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>凌空发球须<b>低于腰、手臂上扬弧线、击打落球</b>、对角发区（或用落球发球）；甩拍加旋转的花活（chainsaw）2023 年就禁了。</p></div>
+        <div class="ref">裁判视角：发球是开球不是开炮。<b>§4.A/4.C</b></div>
+        <div class="stars">社死指数 ★★</div>
+      </div>
       <div class="card">
         <div class="tags"><span class="tag rule">规则</span></div>
         <h3>发球擦网，照样打</h3>
         <div class="mis"><b>❌ 以为</b><p>网球移民的肌肉记忆：擦网重发（let）。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>匹克球<span style="white-space:nowrap"><b>没有 let</b>：</span>发球擦网落入正确对角区 = 活球，接着打。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>匹克球<b>没有 let</b>：发球擦网落入正确对角区 = 活球，接着打。</p></div>
         <div class="ref">裁判视角：网带只是装饰，落点才是法官。<b>§4 发球</b></div>
         <div class="stars">社死指数 ★★★★★</div>
       </div>
+      <div class="card">
+        <div class="tags"><span class="tag rule">规则</span></div>
+        <h3>两跳规则：开局都别抢</h3>
+        <div class="mis"><b>❌ 以为</b><p>发球接发都是凌空即打，快者为王。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>发球与接发<b>双方都必须让球落地一次</b>，之后才可凌空——第三拍才是截击的天下。</p></div>
+        <div class="ref">裁判视角：抢凌空就是送分。<b>§5 两跳</b></div>
+        <div class="stars">社死指数 ★★★★</div>
+      </div>
+    </div>
+
+    <div class="stage-h"><span class="no">叁</span><span class="nm">相持之中</span><span class="hint">网前见真章，也见人品</span></div>
+    <div class="grid g2">
       <div class="card">
         <div class="tags"><span class="tag rule">规则</span></div>
         <h3>厨房动量：打完冲进去也违例</h3>
@@ -221,33 +277,9 @@
         <div class="tags"><span class="tag rule">规则</span></div>
         <h3>球弹进厨房，可以进</h3>
         <div class="mis"><b>❌ 以为</b><p>厨房是禁地，任何时候不能进。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>禁的只是「截击」。球<span style="white-space:nowrap"><b>先落地</b>，</span>你随时进厨房打地面球——dink 就住在里面。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>禁的只是「截击」。球<b>先落地</b>，你随时进厨房打地面球——dink 就住在里面。</p></div>
         <div class="ref">裁判视角：厨房禁的是「凌空」，不是「脚踏」。<b>§9</b></div>
         <div class="stars">社死指数 ★★★★</div>
-      </div>
-      <div class="card">
-        <div class="tags"><span class="tag rule">规则</span></div>
-        <h3>两跳规则：开局都别抢</h3>
-        <div class="mis"><b>❌ 以为</b><p>发球接发都是凌空即打，快者为王。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>发球与接发<span style="white-space:nowrap"><b>双方都必须让球落地一次</b>，</span>之后才可凌空——第三拍才是 volleys 的天下。</p></div>
-        <div class="ref">裁判视角：开局前两板是「地面礼」，抢了就是 fault。<b>§5 两跳</b></div>
-        <div class="stars">社死指数 ★★★★</div>
-      </div>
-      <div class="card">
-        <div class="tags"><span class="tag rule">规则</span></div>
-        <h3>计分：只有发球方能得分</h3>
-        <div class="mis"><b>❌ 以为</b><p>跟排球/羽毛球一样每球得分。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>传统 11 分制（side-out）<span style="white-space:nowrap"><b>唯发球方得分</b>；</span>双打发球序轮两人才换边。2025 起每球得分制成为可选赛制——赛制开赛前问清。</p></div>
-        <div class="ref">裁判视角：先问「今天打哪种分制」，再问「几比几」。<b>§4.B 计分</b></div>
-        <div class="stars">社死指数 ★★★</div>
-      </div>
-      <div class="card">
-        <div class="tags"><span class="tag rule">规则</span></div>
-        <h3>叫分：发球前喊出来</h3>
-        <div class="mis"><b>❌ 以为</b><p>比分记心里，开打就行。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>发球前须<b>完整喊分</b>（双打三段：发球方分-接发方分-发球序），开局是「0-0-2」——这既是规则也是礼。</p></div>
-        <div class="ref">裁判视角：喊分是匹克球的心跳声，不喊等于没开球。<b>§4.D</b></div>
-        <div class="stars">社死指数 ★★★</div>
       </div>
       <div class="card">
         <div class="tags"><span class="tag rule">规则</span></div>
@@ -257,21 +289,55 @@
         <div class="ref">裁判视角：判的是界，度的是人。<b>§13.D 呼报</b></div>
         <div class="stars">社死指数 ★★★</div>
       </div>
-      <div class="card">
-        <div class="tags"><span class="tag rule">规则</span></div>
-        <h3>发球：腰下、上扬、斜对角</h3>
-        <div class="mis"><b>❌ 以为</b><p>上手发球像网球那样砸。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>凌空发球须<span style="white-space:nowrap"><b>低于腰、手臂上扬弧线、击打落球</b>、</span>对角发区（或用落球发球）；甩拍加旋转的花活（chainsaw）2023 年就禁了。</p></div>
-        <div class="ref">裁判视角：发球是开球不是开炮。<b>§4.A/4.C</b></div>
-        <div class="stars">社死指数 ★★</div>
-      </div>
     </div>
   </section>
 
-  <!-- ============ 球场不成文法 ============ -->
+  <!-- ============ 口令与礼数 ============ -->
   <section id="etiquette" class="etq">
-    <div class="sec-head"><h2>球场<em style="color:#5a6b58">不成文法</em></h2></div>
-    <p class="sec-sub">手册不管、球友都懂——违反不判分，但判人品。公开场合通行度高的排前面。</p>
+    <div class="sec-head"><h2>口令与<em style="color:#5a6b58">礼数</em></h2></div>
+    <p class="sec-sub">手册不管、球友都懂——违反不判分，但判人品。先学<b>口令与球</b>（场上的通用语），再修<b>人的礼数</b>。</p>
+
+    <div class="stage-h"><span class="no">口</span><span class="nm">口令与球</span><span class="hint">球场上的通用语</span></div>
+    <div class="grid g3">
+      <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
+        <div class="top"><span class="emo">🛑</span><div><span class="do do-don't">DO</span><h3>Ball on! 球入侵</h3></div></div>
+        <p class="rule-line"><span class="call">球滚进本方或邻场，谁看见谁喊，</span>喊了就停：安全永远比分值大。外来球干扰的回合重打。</p>
+        <p class="why">为什么：脚踝和脸，都比你那半拍回合贵。</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
+        <div class="top"><span class="emo">🗣️</span><div><span class="do do-don't">DO</span><h3>口令速查</h3></div></div>
+        <p class="rule-line"><span class="call">Ball on!</span> 外来球，立即停 ｜ <span class="call">Hold!</span> 死球时请求暂停（系鞋带、清异物）｜ <span class="call">更分</span> 喊错分，下一球发出前更正 ｜ <span class="call">Fault 自呼</span> 自己违例自己认。</p>
+        <p class="why">为什么：会喊这四个词，你就已经是「老球友」了。</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
+        <div class="top"><span class="emo">🏸</span><div><span class="do do-don't">DO</span><h3>Ball coming · 捡球互助</h3></div></div>
+        <p class="rule-line">邻场球滚来，<b>等对方死球</b>再轻抛/滚回场边，别上手大力抽；自己的球飞出场外，举手示意、自己跑捡。</p>
+        <p class="why">为什么：捡球是全场的义务——但别让好心代劳变成理所当然。</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span><span class="tag rule">规则 §4</span></div>
+        <div class="top"><span class="emo">✋</span><div><span class="do do-don't">DO</span><h3>发球时机：等 ready</h3></div></div>
+        <p class="rule-line">发球前确认对方<b>准备好</b>（举手/点头/口令），不搞 quick-serve 偷袭；正式赛 receiver 未 ready 即发，可判发球方 fault。</p>
+        <p class="why">为什么：偷来的分不算分，偷来的好感更不算。</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
+        <div class="top"><span class="emo">🟡</span><div><span class="do do-don't">DO</span><h3>用谁的球？</h3></div></div>
+        <p class="rule-line">公共场<b>共用状态最好的一颗</b>，打完各回各家；约球局用东道主的球；自己常备一颗是新手礼数。球打软、开裂，主动提议换。</p>
+        <p class="why">为什么：球损耗慢，但归属要清——模糊的善意最容易变质。</p>
+      </div>
+      <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
+        <div class="top"><span class="emo">🎯</span><div><span class="do do-don't">DO</span><h3>疑判让分</h3></div></div>
+        <p class="rule-line">边线球拿不准，自己喊给自己：判界内，把分送给对方不丢人。</p>
+        <p class="why">为什么：一场球的信誉，比两分值钱得多。</p>
+      </div>
+    </div>
+
+    <div class="stage-h"><span class="no">礼</span><span class="nm">人的礼数</span><span class="hint">不写进手册的人品题</span></div>
     <div class="grid g3">
       <div class="card">
         <div class="tags"><span class="tag etq">礼仪</span></div>
@@ -284,18 +350,6 @@
         <div class="top"><span class="emo">🤐</span><div><span class="dont do-don't">DON'T</span><h3>别对失误叫好</h3></div></div>
         <p class="rule-line">对方下网出界，别喊「好球」——那是喝倒彩；也别叹气摊手给对手看。</p>
         <p class="why">为什么：对失误的过度反应，是球场社交的头号开除项。</p>
-      </div>
-      <div class="card">
-        <div class="tags"><span class="tag etq">礼仪</span></div>
-        <div class="top"><span class="emo">🎯</span><div><span class="do do-don't">DO</span><h3>疑判让分</h3></div></div>
-        <p class="rule-line">边线球拿不准，自己喊给自己：判界内，把分送给对方不丢人。</p>
-        <p class="why">为什么：一场球的信誉，比两分值钱得多。</p>
-      </div>
-      <div class="card">
-        <div class="tags"><span class="tag etq">礼仪</span></div>
-        <div class="top"><span class="emo">🙋</span><div><span class="do do-don't">DO</span><h3>Ball on! 先喊再捡</h3></div></div>
-        <p class="rule-line">球滚进邻场，喊一声「Ball on!」让那局停下来；捡球绕场外，不从网间穿。</p>
-        <p class="why">为什么：脚踝和脸，都比你那半拍回合贵。</p>
       </div>
       <div class="card">
         <div class="tags"><span class="tag etq">礼仪</span></div>
@@ -328,6 +382,12 @@
         <p class="why">为什么：这是场馆让你下次还能来的原因。</p>
       </div>
     </div>
+
+    <div class="mantra">
+      <div class="m">「在这片球场上，<em>所有人都是我的老师</em>。</div>
+      <div class="m">打得好的，学他的球；打得差的，学他的错。」</div>
+      <small>球场 MANTRA · 与球友共勉</small>
+    </div>
   </section>
 
   <!-- ============ 中国本地化 ============ -->
@@ -338,7 +398,7 @@
       <div class="card">
         <div class="tags"><span class="tag cn">中国</span></div>
         <h3>主管与赛事</h3>
-        <p>2025 年起，匹克球写入体育总局<b>网球运动管理中心</b>职责：规则与团体标准、积分排名、教练员/裁判员认证、全国锦标赛、CPC 中国匹克球巡回赛。找正规比赛/认证教练，认准网管中心体系。GPF 全球匹克球联合会亦提供<span style="white-space:nowrap"><b>中文版规则手册</b>。</span></p>
+        <p>2025 年起，匹克球写入体育总局<b>网球运动管理中心</b>职责：规则与团体标准、积分排名、教练员/裁判员认证、全国锦标赛、CPC 中国匹克球巡回赛。找正规比赛/认证教练，认准网管中心体系。GPF 全球匹克球联合会亦提供<b>中文版规则手册</b>。</p>
         <div class="ref">参考：<a href="https://www.sport.gov.cn/xqzx" target="_blank">体育总局</a> · <a href="https://globalpickleballfederation.org/zh-CN" target="_blank">GPF 中文站</a></div>
       </div>
       <div class="card">
@@ -366,7 +426,7 @@
 
 <footer class="site"><div class="wrap foot-in">
   <div class="disclaim">
-    <div><span style="white-space:nowrap"><b>免责与口径</b>：</span>规则条目以 <a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">USA Pickleball 官方手册</a>（现页 2025 版 + 修订文档）为准；标注「第三方解读」的 2026 条目来自多方一致报道，终以官方发布为准。礼仪与本地化条目为球场惯例，非判罚依据。条款号只到节级。</div>
+    <div><b>免责与口径</b>：规则条目以 <a href="https://usapickleball.org/rules/" target="_blank">USA Pickleball 官方规则手册</a>（现版 + 修订文档）为准；标注「第三方解读」的 2026 条目来自多方一致报道，终以官方发布为准。口令与礼数、本地化条目为球场惯例，非判罚依据。条款号只到节级。</div>
     <div style="margin-top:10px"><button class="share-btn" id="shareBtn">⧉ 复制分享文案</button></div>
   </div>
   <div style="text-align:right">
@@ -378,7 +438,7 @@
 
 <script>
 // ── share ─────────────────────────────────────────────
-const SHARE_TXT = '先礼后兵｜匹克球礼仪与规则一页看懂：年度修订雷达 + 易误解规则澄清卡 + 球场不成文法——第一次上场不社死 https://liyuankui.github.io/xianlihoubing/';
+const SHARE_TXT = '先礼后兵｜匹克球礼仪与规则一页看懂：修订雷达 + 按阶段拆解的易误解规则 + 球场口令与不成文法——第一次上场不社死 https://liyuankui.github.io/xianlihoubing/';
 document.getElementById('shareBtn').onclick = async () => {
   try {
     await navigator.clipboard.writeText(SHARE_TXT);
