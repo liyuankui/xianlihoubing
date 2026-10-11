@@ -6,7 +6,7 @@
 | 事件 | 触发 | 属性 |
 |------|------|------|
 | `page_view` | 页面加载 | `page=index`，`ref`（来路域名） |
-| `nav_click` | 顶部导航跳板块 | `to` ∈ {radar, rules, etiquette, china} |
+| `nav_click` | 顶部导航跳板块 | `to` ∈ {radar, rules, why, etiquette, china} |
 | `share_copy` | 复制分享文案 | — |
 
 查询一律带 `properties.project = 'xianlihoubing'` 过滤。
