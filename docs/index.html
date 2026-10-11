@@ -138,6 +138,67 @@
     h2{font-size:24px;}
     .nav-in{gap:8px;}
   }
+
+/* ── swipe mode (社死自测) ─────────────────────── */
+.swipe-fab{position:fixed;right:18px;bottom:18px;z-index:900;display:flex;align-items:center;gap:8px;
+  background:var(--bing);color:#fff;border:none;border-radius:999px;padding:12px 18px;font-family:var(--serif);
+  font-weight:900;font-size:15px;cursor:pointer;box-shadow:0 6px 18px rgba(191,58,38,.35);letter-spacing:.02em}
+.swipe-fab:active{transform:scale(.96)}
+.swipe-fab .flames{font-size:18px}
+#swipeOverlay{position:fixed;inset:0;z-index:9999;background:rgba(28,24,19,.92);backdrop-filter:blur(6px);
+  display:none;flex-direction:column;color:#f4efe4}
+#swipeOverlay.open{display:flex}
+.sw-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;gap:12px}
+.sw-head .sw-title{font-family:var(--serif);font-weight:900;font-size:17px}
+.sw-head .sw-shasi{font-size:13px;color:#f3b7a8;background:rgba(191,58,38,.25);border-radius:8px;padding:4px 10px;white-space:nowrap}
+.sw-close{background:none;border:1px solid rgba(244,239,228,.3);color:#f4efe4;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:13px}
+.sw-close:hover{background:rgba(244,239,228,.1)}
+.sw-bar{height:4px;background:rgba(244,239,228,.15);margin:0 18px;border-radius:2px;overflow:hidden}
+.sw-bar i{display:block;height:100%;background:var(--li);width:0;transition:width .25s}
+.sw-stage{flex:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.sw-stack{position:relative;width:min(88vw,420px);height:min(66vh,560px)}
+.sw-card{position:absolute;inset:0;background:#f7f3ea;color:#221e18;border-radius:18px;border:2px solid #221e18;
+  box-shadow:0 18px 40px rgba(0,0,0,.4);padding:26px 24px;display:flex;flex-direction:column;gap:14px;
+  user-select:none;-webkit-user-select:none;touch-action:pan-y;overflow:hidden}
+.sw-card .sw-chip{display:flex;gap:8px;flex-wrap:wrap}
+.sw-card .sw-chip span{font-size:12px;font-weight:700;border:1.5px solid #221e18;border-radius:6px;padding:2px 8px;background:#fff}
+.sw-card .sw-q{font-size:15px;font-weight:700;color:var(--bing)}
+.sw-card h3{font-family:var(--serif);font-size:clamp(20px,5vw,26px);line-height:1.3;margin:0}
+.sw-card .sw-hook{font-size:15px;line-height:1.75;background:#fff;border:1.5px solid #221e18;border-radius:12px;padding:14px 16px;flex:1;overflow:auto}
+.sw-card .sw-hook b{color:var(--bing)}
+.sw-peek1{transform:scale(.94) translateY(14px);opacity:.55}
+.sw-peek2{transform:scale(.88) translateY(28px);opacity:.28}
+.sw-stamp{position:absolute;top:22px;font-family:var(--serif);font-weight:900;font-size:30px;border:4px solid;
+  border-radius:12px;padding:2px 14px;transform:rotate(-14deg);opacity:0;pointer-events:none}
+.sw-stamp.yes{right:18px;color:#2c6e49;border-color:#2c6e49}
+.sw-stamp.nope{left:18px;color:var(--bing);border-color:var(--bing);transform:rotate(14deg)}
+.sw-foot{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 26px;gap:14px}
+.sw-hint{font-size:13px;color:rgba(244,239,228,.75);line-height:1.5}
+.sw-btns{display:flex;gap:10px}
+.sw-btn{width:56px;height:56px;border-radius:50%;border:2px solid #221e18;cursor:pointer;font-size:22px;
+  display:flex;align-items:center;justify-content:center;transition:transform .1s}
+.sw-btn:active{transform:scale(.9)}
+.sw-btn.left{background:#f3b7a8}.sw-btn.right{background:#b7d8b7}
+.sw-end{position:absolute;inset:0;background:inherit;display:none;flex-direction:column;align-items:center;
+  justify-content:center;gap:14px;padding:24px;text-align:center;overflow:auto}
+#swipeOverlay.done .sw-end{display:flex}
+#swipeOverlay.done .sw-stack,#swipeOverlay.done .sw-foot .sw-btns{display:none}
+.sw-rank{font-family:var(--serif);font-weight:900;font-size:clamp(26px,7vw,36px);color:#f4efe4}
+.sw-sub{font-size:15px;color:rgba(244,239,228,.85)}
+.sw-dims{width:min(88vw,420px);display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.sw-dim{display:flex;align-items:center;gap:10px;font-size:14px}
+.sw-dim .nm{width:3em;text-align:right;flex-shrink:0}
+.sw-dim .tr{flex:1;height:10px;background:rgba(244,239,228,.15);border-radius:5px;overflow:hidden}
+.sw-dim .tr i{display:block;height:100%;background:var(--li);border-radius:5px}
+.sw-dim .vl{width:4.5em;font-variant-numeric:tabular-nums;flex-shrink:0}
+.sw-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.sw-act{border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px;cursor:pointer;border:2px solid #221e18}
+.sw-act.primary{background:var(--bing);color:#fff}
+.sw-act.ghost{background:transparent;color:#f4efe4;border-color:rgba(244,239,228,.4)}
+.sw-missed{width:min(88vw,420px);margin-top:4px;text-align:left;font-size:13px;color:rgba(244,239,228,.75)}
+.sw-missed a{color:#9fc3e8}
+.sw-missed li{margin:4px 0}
+@media(hover:none){.sw-hint .desktop-only{display:none}}
 </style>
 </head>
 <body>
@@ -589,6 +650,192 @@ if (!localStorage.getItem(UID_KEY)) {
     localStorage.setItem(UID_KEY, crypto.randomUUID().slice(0, 8));
 }
 track('page_view');
+
+// ── Swipe Mode · 社死自测 ─────────────────────────
+(function () {
+  const SEC_META = {
+    radar: { dim: '规则', chip: '📡 修订雷达', q: '知道这个修订吗？', yes: '知道', no: '不知道' },
+    mis:   { dim: '规则', chip: '📖 易误解',    q: '中过这个坑吗？',   yes: '没中过', no: '中过' },
+    why:   { dim: '球商', chip: '🧠 原力场',    q: '悟到过这条吗？',   yes: '悟了',   no: '没悟' },
+    etq:   { dim: '礼数', chip: '🤝 口令礼数',  q: '做到了吗？',       yes: '做到了', no: '没做到' },
+    cn:    { dim: '本地', chip: '🇨🇳 本地化',   q: '知道这个现实吗？', yes: '知道',   no: '不知道' }
+  };
+  let deck = [], idx = 0, missShasi = 0, results = [];
+
+  function collect() {
+    deck = []; idx = 0; missShasi = 0; results = [];
+    const seen = new Set();
+    document.querySelectorAll('#radar .card, #rules .card, #why .card, #etiquette .card, #china .card').forEach((el, i) => {
+      if (seen.has(el)) return; seen.add(el);
+      const sec = el.closest('#china') ? 'cn' : el.closest('#why') ? 'why' : el.closest('#etiquette') ? 'etq' : el.closest('#radar') ? 'radar' : 'mis';
+      const h3 = el.querySelector('h3'); if (!h3) return;
+      el.id = el.id || ('swc-' + i);
+      const hook = el.querySelector('.mis p') || el.querySelector('.rule-line') || el.querySelector('.card > p');
+      deck.push({ id: el.id, sec, title: h3.textContent.trim(), hook: hook ? hook.innerHTML : '' });
+    });
+  }
+
+  const $ = (x) => document.getElementById(x);
+  let overlay, stack;
+
+  function cardEl(item, layer) {
+    const m = SEC_META[item.sec];
+    const d = document.createElement('div');
+    d.className = 'sw-card' + (layer ? ' sw-peek' + layer : '');
+    d.innerHTML = '<div class="sw-chip"><span>' + m.chip + '</span></div>' +
+      '<div class="sw-q">' + m.q + '</div><h3>' + item.title + '</h3>' +
+      '<div class="sw-hook">' + item.hook + '</div>' +
+      '<div class="sw-stamp yes">' + m.yes + '</div><div class="sw-stamp nope">' + m.no + '</div>';
+    return d;
+  }
+
+  function render() {
+    stack.innerHTML = '';
+    for (let l = 2; l >= 0; l--) {
+      const it = deck[idx + l]; if (!it) continue;
+      const c = cardEl(it, l);
+      if (l === 0) bindDrag(c);
+      stack.appendChild(c);
+    }
+    $('swBar').style.width = (idx / deck.length * 100) + '%';
+    $('swCount').textContent = (idx + 1) + ' / ' + deck.length;
+    $('swShasi').textContent = '社死 ' + missShasi;
+  }
+
+  function commit(dir) { // dir: 1 = 我OK(right), -1 = 还不行(left)
+    const it = deck[idx]; if (!it) return;
+    results.push({ ...it, ok: dir === 1 });
+    if (dir === -1) missShasi++;
+    track('swipe_card', { card_id: it.id, card: it.title.slice(0, 40), section: SEC_META[it.sec].dim, verdict: dir === 1 ? 'ok' : 'not_yet' });
+    const top = stack.querySelector('.sw-card:not(.sw-peek1):not(.sw-peek2)');
+    if (top) {
+      top.style.transition = 'transform .35s ease, opacity .35s ease';
+      top.style.transform = 'translateX(' + dir * 130 + '%) rotate(' + dir * 24 + 'deg)';
+      top.style.opacity = '0';
+    }
+    idx++;
+    setTimeout(() => { idx >= deck.length ? finish() : render(); }, 320);
+  }
+
+  function bindDrag(card) {
+    let sx = 0, dx = 0, drag = false;
+    const stampY = card.querySelector('.sw-stamp.yes'), stampN = card.querySelector('.sw-stamp.nope');
+    card.addEventListener('pointerdown', (e) => {
+      drag = true; sx = e.clientX; dx = 0;
+      card.setPointerCapture(e.pointerId);
+      card.style.transition = 'none';
+    });
+    card.addEventListener('pointermove', (e) => {
+      if (!drag) return;
+      dx = e.clientX - sx;
+      card.style.transform = 'translateX(' + dx + 'px) rotate(' + Math.max(-18, Math.min(18, dx / 14)) + 'deg)';
+      stampY.style.opacity = Math.max(0, dx / 110);
+      stampN.style.opacity = Math.max(0, -dx / 110);
+    });
+    const end = () => {
+      if (!drag) return; drag = false;
+      if (Math.abs(dx) > Math.min(140, innerWidth * .32)) commit(dx > 0 ? 1 : -1);
+      else {
+        card.style.transition = 'transform .3s ease';
+        card.style.transform = ''; stampY.style.opacity = 0; stampN.style.opacity = 0;
+      }
+    };
+    card.addEventListener('pointerup', end);
+    card.addEventListener('pointercancel', end);
+  }
+
+  function finish() {
+    overlay.classList.add('done');
+    const dims = {};
+    results.forEach(r => {
+      const d = SEC_META[r.sec].dim;
+      dims[d] = dims[d] || { ok: 0, all: 0 }; dims[d].all++; if (r.ok) dims[d].ok++;
+    });
+    const ok = results.filter(r => r.ok).length, total = results.length;
+    const rate = ok / total;
+    const rank = rate >= .9 ? '球场活化石' : rate >= .7 ? '老球友' : rate >= .45 ? '进阶中' : rate >= .2 ? '新手上路' : '社死预备役';
+    $('swBar').style.width = '100%';
+    const dimRows = Object.entries(dims).map(([k, v]) =>
+      '<div class="sw-dim"><span class="nm">' + k + '</span><span class="tr"><i style="width:' + (v.ok / v.all * 100) + '%"></i></span><span class="vl">' + v.ok + ' / ' + v.all + '</span></div>').join('');
+    const missed = results.filter(r => !r.ok);
+    const missList = missed.length
+      ? '<div class="sw-missed"><b>中招的卡（点击回看）：</b><ul>' + missed.map(r => '<li><a href="#" data-jump="' + r.id + '">' + r.title + '</a></li>').join('') + '</ul></div>'
+      : '<div class="sw-missed">零中招——要么天赋异禀，要么你在撒谎。</div>';
+    $('swEnd').innerHTML =
+      '<div class="sw-rank">' + rank + '</div>' +
+      '<div class="sw-sub">' + ok + ' / ' + total + ' 条达标 · 社死指数 <b>' + (total - ok) + '</b></div>' +
+      '<div class="sw-dims">' + dimRows + '</div>' + missList +
+      '<div class="sw-actions">' +
+      '<button class="sw-act primary" id="swShare">⧉ 复制战报</button>' +
+      '<button class="sw-act ghost" id="swRetry">↻ 重测</button></div>';
+    $('swRetry').onclick = () => { overlay.classList.remove('done'); open(true); };
+    $('swShare').onclick = async () => {
+      const parts = Object.entries(dims).map(([k, v]) => k + ' ' + v.ok + '/' + v.all).join(' ｜ ');
+      const txt = '先礼后兵 · 匹克球素养战报\n' + parts + '\n社死指数 ' + (total - ok) + ' ——「' + rank + '」\n来测你的：https://liyuankui.github.io/xianlihoubing/#swipe';
+      try { await navigator.clipboard.writeText(txt); } catch (e) {}
+      if (navigator.share) { try { await navigator.share({ text: txt }); } catch (e) {} }
+      const b = $('swShare'); b.textContent = '✓ 已复制'; setTimeout(() => b.textContent = '⧉ 复制战报', 1600);
+      track('swipe_share', { rank, ok, total });
+    };
+    document.querySelectorAll('#swEnd [data-jump]').forEach(a => a.onclick = (e) => {
+      e.preventDefault(); close();
+      const el = document.getElementById(a.dataset.jump);
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.style.outline = '3px solid var(--bing)'; el.style.outlineOffset = '4px'; setTimeout(() => { el.style.outline = ''; }, 2200); }
+    });
+    track('swipe_done', { ok, total, rank });
+  }
+
+  function open(replay) {
+    collect(); overlay.classList.add('open'); overlay.classList.remove('done');
+    document.body.style.overflow = 'hidden';
+    if (location.hash !== '#swipe') history.replaceState(null, '', '#swipe');
+    if (!replay) track('swipe_open', { cards: deck.length });
+    render();
+  }
+  function close() {
+    overlay.classList.remove('open', 'done'); document.body.style.overflow = '';
+    if (location.hash === '#swipe') history.replaceState(null, '', location.pathname);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    overlay = $('swipeOverlay'); stack = $('swStack');
+    $('swipeFab').onclick = () => open();
+    $('swClose').onclick = close;
+    $('swLeft').onclick = () => commit(-1);
+    $('swRight').onclick = () => commit(1);
+    if (location.hash === '#swipe') setTimeout(() => open(), 300);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('open') || overlay.classList.contains('done')) return;
+    if (e.key === 'ArrowLeft') commit(-1);
+    if (e.key === 'ArrowRight') commit(1);
+    if (e.key === 'Escape') close();
+  });
+})();
 </script>
+
+<button class="swipe-fab" id="swipeFab" aria-label="社死自测"><span class="flames">🎯</span>社死自测</button>
+
+<div id="swipeOverlay" role="dialog" aria-label="社死自测">
+  <div class="sw-head">
+    <span class="sw-title">🎯 社死自测</span>
+    <span class="sw-shasi" id="swShasi">社死 0</span>
+    <button class="sw-close" id="swClose">关闭 ESC</button>
+  </div>
+  <div class="sw-bar"><i id="swBar"></i></div>
+  <div class="sw-stage">
+    <div class="sw-stack" id="swStack"></div>
+    <div class="sw-end" id="swEnd"></div>
+  </div>
+  <div class="sw-foot">
+    <div class="sw-hint">← 还不行<br><span class="desktop-only">方向键也可以 · 拖动卡片滑动</span></div>
+    <div class="sw-btns">
+      <button class="sw-btn left" id="swLeft" aria-label="还不行">✗</button>
+      <button class="sw-btn right" id="swRight" aria-label="我OK">✓</button>
+    </div>
+    <div class="sw-hint" style="text-align:right">我OK →<br><span class="desktop-only" id="swCount">0 / 0</span></div>
+  </div>
+</div>
 </body>
+
 </html>
