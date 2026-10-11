@@ -81,9 +81,10 @@
   .tag.draft{background:#8a8172;}
   .mis{border-left:3px solid var(--bing);padding-left:12px;margin:10px 0;}
   .truth{border-left:3px solid var(--li);padding-left:12px;margin:10px 0;}
-  .mis b,.truth b{font-size:12px;letter-spacing:.2em;display:block;margin-bottom:3px;}
+  .mis > b,.truth > b{font-size:12px;letter-spacing:.2em;display:block;margin-bottom:3px;}
   .mis b{color:var(--bing);} .truth b{color:var(--li);}
   .mis p,.truth p{font-size:13.5px;line-height:1.75;}
+  .mis b::after,.truth b::after{content:"\2060";}
   .ref{font-size:11.5px;color:var(--muted);letter-spacing:.04em;margin-top:12px;
        line-height:1.7;}
   .ref b{color:var(--ink);}
@@ -159,7 +160,7 @@
       <div class="card">
         <span class="year">2026</span><div class="tags"><span class="tag intl">国际</span><span class="tag draft">第三方解读</span></div>
         <h3>冻结规则取消</h3>
-        <p><b>14.A.2</b>：rally scoring（每球得分制）下，<b>接发方也能拿下制胜分</b>——原先只有发球方能终结比赛，现双方皆可。打每球得分制的朋友：落后方的翻盘窗口开了。</p>
+        <p><span style="white-space:nowrap"><b>14.A.2</b>：</span>rally scoring（每球得分制）下，<b>接发方也能拿下制胜分</b>——原先只有发球方能终结比赛，现双方皆可。打每球得分制的朋友：落后方的翻盘窗口开了。</p>
         <div class="ref">详见 <a href="https://forwrd.co/blogs" target="_blank">Forwrd 2026 计分指南</a> · 以 <a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">USAP 官方手册</a> 为准</div>
       </div>
       <div class="card">
@@ -204,7 +205,7 @@
         <div class="tags"><span class="tag rule">规则</span></div>
         <h3>发球擦网，照样打</h3>
         <div class="mis"><b>❌ 以为</b><p>网球移民的肌肉记忆：擦网重发（let）。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>匹克球<b>没有 let</b>：发球擦网落入正确对角区 = 活球，接着打。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>匹克球<span style="white-space:nowrap"><b>没有 let</b>：</span>发球擦网落入正确对角区 = 活球，接着打。</p></div>
         <div class="ref">裁判视角：网带只是装饰，落点才是法官。<b>§4 发球</b></div>
         <div class="stars">社死指数 ★★★★★</div>
       </div>
@@ -220,7 +221,7 @@
         <div class="tags"><span class="tag rule">规则</span></div>
         <h3>球弹进厨房，可以进</h3>
         <div class="mis"><b>❌ 以为</b><p>厨房是禁地，任何时候不能进。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>禁的只是「截击」。球<b>先落地</b>，你随时进厨房打地面球——dink 就住在里面。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>禁的只是「截击」。球<span style="white-space:nowrap"><b>先落地</b>，</span>你随时进厨房打地面球——dink 就住在里面。</p></div>
         <div class="ref">裁判视角：厨房禁的是「凌空」，不是「脚踏」。<b>§9</b></div>
         <div class="stars">社死指数 ★★★★</div>
       </div>
@@ -228,7 +229,7 @@
         <div class="tags"><span class="tag rule">规则</span></div>
         <h3>两跳规则：开局都别抢</h3>
         <div class="mis"><b>❌ 以为</b><p>发球接发都是凌空即打，快者为王。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>发球与接发<b>双方都必须让球落地一次</b>，之后才可凌空——第三拍才是 volleys 的天下。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>发球与接发<span style="white-space:nowrap"><b>双方都必须让球落地一次</b>，</span>之后才可凌空——第三拍才是 volleys 的天下。</p></div>
         <div class="ref">裁判视角：开局前两板是「地面礼」，抢了就是 fault。<b>§5 两跳</b></div>
         <div class="stars">社死指数 ★★★★</div>
       </div>
@@ -236,7 +237,7 @@
         <div class="tags"><span class="tag rule">规则</span></div>
         <h3>计分：只有发球方能得分</h3>
         <div class="mis"><b>❌ 以为</b><p>跟排球/羽毛球一样每球得分。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>传统 11 分制（side-out）<b>唯发球方得分</b>；双打发球序轮两人才换边。2025 起每球得分制成为可选赛制——赛制开赛前问清。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>传统 11 分制（side-out）<span style="white-space:nowrap"><b>唯发球方得分</b>；</span>双打发球序轮两人才换边。2025 起每球得分制成为可选赛制——赛制开赛前问清。</p></div>
         <div class="ref">裁判视角：先问「今天打哪种分制」，再问「几比几」。<b>§4.B 计分</b></div>
         <div class="stars">社死指数 ★★★</div>
       </div>
@@ -260,7 +261,7 @@
         <div class="tags"><span class="tag rule">规则</span></div>
         <h3>发球：腰下、上扬、斜对角</h3>
         <div class="mis"><b>❌ 以为</b><p>上手发球像网球那样砸。</p></div>
-        <div class="truth"><b>✅ 其实</b><p>凌空发球须<b>低于腰、手臂上扬弧线、击打落球</b>、对角发区（或用落球发球）；甩拍加旋转的花活（chainsaw）2023 年就禁了。</p></div>
+        <div class="truth"><b>✅ 其实</b><p>凌空发球须<span style="white-space:nowrap"><b>低于腰、手臂上扬弧线、击打落球</b>、</span>对角发区（或用落球发球）；甩拍加旋转的花活（chainsaw）2023 年就禁了。</p></div>
         <div class="ref">裁判视角：发球是开球不是开炮。<b>§4.A/4.C</b></div>
         <div class="stars">社死指数 ★★</div>
       </div>
@@ -337,7 +338,7 @@
       <div class="card">
         <div class="tags"><span class="tag cn">中国</span></div>
         <h3>主管与赛事</h3>
-        <p>2025 年起，匹克球写入体育总局<b>网球运动管理中心</b>职责：规则与团体标准、积分排名、教练员/裁判员认证、全国锦标赛、CPC 中国匹克球巡回赛。找正规比赛/认证教练，认准网管中心体系。GPF 全球匹克球联合会亦提供<b>中文版规则手册</b>。</p>
+        <p>2025 年起，匹克球写入体育总局<b>网球运动管理中心</b>职责：规则与团体标准、积分排名、教练员/裁判员认证、全国锦标赛、CPC 中国匹克球巡回赛。找正规比赛/认证教练，认准网管中心体系。GPF 全球匹克球联合会亦提供<span style="white-space:nowrap"><b>中文版规则手册</b>。</span></p>
         <div class="ref">参考：<a href="https://www.sport.gov.cn/xqzx" target="_blank">体育总局</a> · <a href="https://globalpickleballfederation.org/zh-CN" target="_blank">GPF 中文站</a></div>
       </div>
       <div class="card">
@@ -365,7 +366,7 @@
 
 <footer class="site"><div class="wrap foot-in">
   <div class="disclaim">
-    <div><b>免责与口径</b>：规则条目以 <a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">USA Pickleball 官方手册</a>（现页 2025 版 + 修订文档）为准；标注「第三方解读」的 2026 条目来自多方一致报道，终以官方发布为准。礼仪与本地化条目为球场惯例，非判罚依据。条款号只到节级。</div>
+    <div><span style="white-space:nowrap"><b>免责与口径</b>：</span>规则条目以 <a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">USA Pickleball 官方手册</a>（现页 2025 版 + 修订文档）为准；标注「第三方解读」的 2026 条目来自多方一致报道，终以官方发布为准。礼仪与本地化条目为球场惯例，非判罚依据。条款号只到节级。</div>
     <div style="margin-top:10px"><button class="share-btn" id="shareBtn">⧉ 复制分享文案</button></div>
   </div>
   <div style="text-align:right">
