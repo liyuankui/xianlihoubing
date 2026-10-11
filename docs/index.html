@@ -25,7 +25,7 @@
     --serif:"Songti SC","STSong","Noto Serif SC",serif;
     --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
+  *{margin:0;padding:0;box-sizing:border-box;line-break:strict;}
   html{scroll-behavior:smooth;}
   body{background:#ece7db;font-family:var(--sans);color:var(--ink);}
   .wrap{width:min(1060px,94vw);margin:0 auto;}
@@ -201,7 +201,7 @@
     <p class="sec-sub">老球友最常踩的坑，按社死指数排序。每张卡：❌ 大家以为 → ✅ 手册其实 → 裁判视角一句话。条款号给到节级，细则以<a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">官方手册</a>为准。</p>
     <div class="grid g2">
       <div class="card">
-        <div class="tags"><span class="tag intl">规则</span></div>
+        <div class="tags"><span class="tag rule">规则</span></div>
         <h3>发球擦网，照样打</h3>
         <div class="mis"><b>❌ 以为</b><p>网球移民的肌肉记忆：擦网重发（let）。</p></div>
         <div class="truth"><b>✅ 其实</b><p>匹克球<b>没有 let</b>：发球擦网落入正确对角区 = 活球，接着打。</p></div>
@@ -209,7 +209,7 @@
         <div class="stars">社死指数 ★★★★★</div>
       </div>
       <div class="card">
-        <div class="tags"><span class="tag intl">规则</span></div>
+        <div class="tags"><span class="tag rule">规则</span></div>
         <h3>厨房动量：打完冲进去也违例</h3>
         <div class="mis"><b>❌ 以为</b><p>球打完就自由了，惯性滑进厨房没事。</p></div>
         <div class="truth"><b>✅ 其实</b><p>截击后因<b>动量</b>（或队友同时在厨房）踏入非截击区 = 全队失分，球死没死都算。</p></div>
@@ -217,7 +217,7 @@
         <div class="stars">社死指数 ★★★★★</div>
       </div>
       <div class="card">
-        <div class="tags"><span class="tag intl">规则</span></div>
+        <div class="tags"><span class="tag rule">规则</span></div>
         <h3>球弹进厨房，可以进</h3>
         <div class="mis"><b>❌ 以为</b><p>厨房是禁地，任何时候不能进。</p></div>
         <div class="truth"><b>✅ 其实</b><p>禁的只是「截击」。球<b>先落地</b>，你随时进厨房打地面球——dink 就住在里面。</p></div>
@@ -225,7 +225,7 @@
         <div class="stars">社死指数 ★★★★</div>
       </div>
       <div class="card">
-        <div class="tags"><span class="tag intl">规则</span></div>
+        <div class="tags"><span class="tag rule">规则</span></div>
         <h3>两跳规则：开局都别抢</h3>
         <div class="mis"><b>❌ 以为</b><p>发球接发都是凌空即打，快者为王。</p></div>
         <div class="truth"><b>✅ 其实</b><p>发球与接发<b>双方都必须让球落地一次</b>，之后才可凌空——第三拍才是 volleys 的天下。</p></div>
@@ -233,7 +233,7 @@
         <div class="stars">社死指数 ★★★★</div>
       </div>
       <div class="card">
-        <div class="tags"><span class="tag intl">规则</span></div>
+        <div class="tags"><span class="tag rule">规则</span></div>
         <h3>计分：只有发球方能得分</h3>
         <div class="mis"><b>❌ 以为</b><p>跟排球/羽毛球一样每球得分。</p></div>
         <div class="truth"><b>✅ 其实</b><p>传统 11 分制（side-out）<b>唯发球方得分</b>；双打发球序轮两人才换边。2025 起每球得分制成为可选赛制——赛制开赛前问清。</p></div>
@@ -241,7 +241,7 @@
         <div class="stars">社死指数 ★★★</div>
       </div>
       <div class="card">
-        <div class="tags"><span class="tag intl">规则</span></div>
+        <div class="tags"><span class="tag rule">规则</span></div>
         <h3>叫分：发球前喊出来</h3>
         <div class="mis"><b>❌ 以为</b><p>比分记心里，开打就行。</p></div>
         <div class="truth"><b>✅ 其实</b><p>发球前须<b>完整喊分</b>（双打三段：发球方分-接发方分-发球序），开局是「0-0-2」——这既是规则也是礼。</p></div>
@@ -249,7 +249,7 @@
         <div class="stars">社死指数 ★★★</div>
       </div>
       <div class="card">
-        <div class="tags"><span class="tag intl">规则</span></div>
+        <div class="tags"><span class="tag rule">规则</span></div>
         <h3>出界呼报：落地才许喊</h3>
         <div class="mis"><b>❌ 以为</b><p>看着要出界就提前喊 out。</p></div>
         <div class="truth"><b>✅ 其实</b><p>呼报须在球<b>落地后立刻</b>做出；自己半场自己判，存疑时<b>判界内</b>（疑利归对方）。</p></div>
@@ -257,7 +257,7 @@
         <div class="stars">社死指数 ★★★</div>
       </div>
       <div class="card">
-        <div class="tags"><span class="tag intl">规则</span></div>
+        <div class="tags"><span class="tag rule">规则</span></div>
         <h3>发球：腰下、上扬、斜对角</h3>
         <div class="mis"><b>❌ 以为</b><p>上手发球像网球那样砸。</p></div>
         <div class="truth"><b>✅ 其实</b><p>凌空发球须<b>低于腰、手臂上扬弧线、击打落球</b>、对角发区（或用落球发球）；甩拍加旋转的花活（chainsaw）2023 年就禁了。</p></div>
@@ -273,46 +273,55 @@
     <p class="sec-sub">手册不管、球友都懂——违反不判分，但判人品。公开场合通行度高的排前面。</p>
     <div class="grid g3">
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">🗣️</span><div><span class="do do-don't">DO</span><h3>好球要出声</h3></div></div>
         <p class="rule-line">对手打出真正的好球，说一声 nice shot / 好球；搭档打出好球，也要夸。</p>
         <p class="why">为什么：夸对手是强者的余裕——但只在球<b>确实是好球</b>时说。</p>
       </div>
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">🤐</span><div><span class="dont do-don't">DON'T</span><h3>别对失误叫好</h3></div></div>
         <p class="rule-line">对方下网出界，别喊「好球」——那是喝倒彩；也别叹气摊手给对手看。</p>
         <p class="why">为什么：对失误的过度反应，是球场社交的头号开除项。</p>
       </div>
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">🎯</span><div><span class="do do-don't">DO</span><h3>疑判让分</h3></div></div>
         <p class="rule-line">边线球拿不准，自己喊给自己：判界内，把分送给对方不丢人。</p>
         <p class="why">为什么：一场球的信誉，比两分值钱得多。</p>
       </div>
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">🙋</span><div><span class="do do-don't">DO</span><h3>Ball on! 先喊再捡</h3></div></div>
         <p class="rule-line">球滚进邻场，喊一声「Ball on!」让那局停下来；捡球绕场外，不从网间穿。</p>
         <p class="why">为什么：脚踝和脸，都比你那半拍回合贵。</p>
       </div>
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">🏓</span><div><span class="do do-don't">DO</span><h3>回球轻打给发球方</h3></div></div>
         <p class="rule-line">回合结束，把球<b>轻轻送到对方发球手边</b>（或从网下滚回），别大力抽人身上。</p>
         <p class="why">为什么：上一板的余温，决定下一局的开场气氛。</p>
       </div>
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">🧢</span><div><span class="do do-don't">DO</span><h3>拍架排队，输了让位</h3></div></div>
         <p class="rule-line">公共场人多：拍子插排架轮换，一局输了下场等下一轮；别连庄不走。</p>
         <p class="why">为什么：公开场是共享资源，轮换制是它的心跳。</p>
       </div>
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">🤐</span><div><span class="dont do-don't">DON'T</span><h3>别不请自教</h3></div></div>
         <p class="rule-line">对方没问，就别指导人家「你该这样打」——正式赛里场外指导本身违规。</p>
         <p class="why">为什么：好为人师是社交场上的反向操作。</p>
       </div>
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">🤝</span><div><span class="do do-don't">DO</span><h3>赛后拍碰</h3></div></div>
         <p class="rule-line">结束时网前与所有人拍碰（或举手示意）——赢的别炫，输的别摔拍。</p>
         <p class="why">为什么：球会落地，人设不会。</p>
       </div>
       <div class="card">
+        <div class="tags"><span class="tag etq">礼仪</span></div>
         <div class="top"><span class="emo">👟</span><div><span class="do do-don't">DO</span><h3>穿对的鞋</h3></div></div>
         <p class="rule-line">室内馆穿<b>非标记底</b>球鞋；别穿跑鞋硬刹——膝盖和地板都会记仇。</p>
         <p class="why">为什么：这是场馆让你下次还能来的原因。</p>
