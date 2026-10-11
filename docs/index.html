@@ -145,6 +145,22 @@
   font-weight:900;font-size:15px;cursor:pointer;box-shadow:0 6px 18px rgba(191,58,38,.35);letter-spacing:.02em}
 .swipe-fab:active{transform:scale(.96)}
 .swipe-fab .flames{font-size:18px}
+.sec-quiz{margin-left:auto;background:#fff;border:1.5px solid #221e18;border-radius:999px;padding:6px 14px;
+  font-family:var(--serif);font-weight:700;font-size:13px;cursor:pointer;color:#221e18;white-space:nowrap}
+.sec-quiz:hover{background:var(--li);color:#fff}
+.sec-quiz:active{transform:scale(.96)}
+.sw-picker{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:22px;overflow:auto}
+.sw-picker h3{font-family:var(--serif);font-weight:900;font-size:24px;color:#f4efe4;margin:0}
+.sw-picker .sw-pk-sub{font-size:13px;color:rgba(244,239,228,.7)}
+.sw-mode{width:min(84vw,360px);background:#f7f3ea;border:2px solid #221e18;border-radius:16px;padding:16px 18px;
+  display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;box-shadow:0 8px 20px rgba(0,0,0,.3);transition:transform .12s}
+.sw-mode:hover{transform:translateY(-2px)}
+.sw-mode .mo{font-size:28px}
+.sw-mode b{font-family:var(--serif);font-size:17px;display:block;color:#221e18}
+.sw-mode small{color:#6a6152;font-size:12.5px}
+.sw-mode .n{margin-left:auto;font-weight:900;font-family:var(--serif);font-size:15px;color:var(--bing);white-space:nowrap}
+#swipeOverlay.picking .sw-picker{display:flex}
+#swipeOverlay.picking .sw-stack,#swipeOverlay.picking .sw-foot .sw-btns{display:none}
 #swipeOverlay{position:fixed;inset:0;z-index:9999;background:rgba(28,24,19,.92);backdrop-filter:blur(6px);
   display:none;flex-direction:column;color:#f4efe4}
 #swipeOverlay.open{display:flex}
@@ -276,7 +292,7 @@
 
   <!-- ============ 易误解规则（按阶段） ============ -->
   <section id="rules">
-    <div class="sec-head"><h2>易误解<em style="color:var(--li)">规则</em></h2></div>
+    <div class="sec-head"><h2>易误解<em style="color:var(--li)">规则</em></h2><button class="sec-quiz" data-mode="rules">🎯 自测本区 13 条</button></div>
     <p class="sec-sub">老球友最常踩的坑——<b>按一分的生命周期排</b>：开局之前 → 发球与接发 → 相持之中。每张卡：❌ 大家以为 → ✅ 手册其实 → 裁判视角一句话。条款号已按<b>2026 版全文</b>（GPF Edition）校对更新，细则以<a href="https://usapickleball.org/rules/" target="_blank">官方手册</a>为准。</p>
 
     <div class="stage-h"><span class="no">壹</span><span class="nm">开局之前</span><span class="hint">球还没发，先别社死</span></div>
@@ -437,7 +453,7 @@
 
   <!-- ============ 口令与礼数 ============ -->
   <section id="etiquette" class="etq">
-    <div class="sec-head"><h2>口令与<em style="color:#5a6b58">礼数</em></h2></div>
+    <div class="sec-head"><h2>口令与<em style="color:#5a6b58">礼数</em></h2><button class="sec-quiz" data-mode="etq">🎯 自测本区 15 条</button></div>
     <p class="sec-sub">手册不管、球友都懂——违反不判分，但判人品。先学<b>口令与球</b>（场上的通用语），再修<b>人的礼数</b>。</p>
 
     <div class="stage-h"><span class="no">口</span><span class="nm">口令与球</span><span class="hint">球场上的通用语</span></div>
@@ -594,7 +610,7 @@
 
   <!-- ============ 冷知识 · 起源 ============ -->
   <section id="facts" class="cn">
-    <div class="sec-head"><h2>冷知识<em style="color:var(--zhong)">· 起源</em></h2></div>
+    <div class="sec-head"><h2>冷知识<em style="color:var(--zhong)">· 起源</em></h2><button class="sec-quiz" data-mode="facts">🎯 自测本区 6 条</button></div>
     <p class="sec-sub">规则都是人<span style="white-space:nowrap">定的——</span>这些人和这些名字从哪来？饭桌球局的谈资，一次给够。</p>
     <div class="grid g3">
       <div class="card">
@@ -702,12 +718,19 @@ track('page_view');
   };
   let deck = [], idx = 0, missShasi = 0, results = [];
 
-  function collect() {
-    deck = []; idx = 0; missShasi = 0; results = [];
-    const seen = new Set();
-    document.querySelectorAll('#radar .card, #rules .card, #why .card, #etiquette .card, #china .card, #facts .card').forEach((el, i) => {
-      if (seen.has(el)) return; seen.add(el);
-      const sec = el.closest('#china') ? 'cn' : el.closest('#facts') ? 'facts' : el.closest('#why') ? 'why' : el.closest('#etiquette') ? 'etq' : el.closest('#radar') ? 'radar' : 'mis';
+  const MODES = {
+    rules: { secs: ['mis'], label: '易误解规则' },
+    etq:   { secs: ['etq'], label: '口令与礼数' },
+    facts: { secs: ['facts'], label: '冷知识 · 起源' }
+  };
+  let mode = 'rules';
+
+  function collect(m) {
+    deck = []; idx = 0; missShasi = 0; results = []; mode = m;
+    const secs = new Set(MODES[m].secs);
+    document.querySelectorAll('#rules .card, #etiquette .card, #facts .card').forEach((el, i) => {
+      const sec = el.closest('#facts') ? 'facts' : el.closest('#etiquette') ? 'etq' : 'mis';
+      if (!secs.has(sec)) return;
       const h3 = el.querySelector('h3'); if (!h3) return;
       el.id = el.id || ('swc-' + i);
       const hook = el.querySelector('.mis p') || el.querySelector('.rule-line') || el.querySelector('.card > p');
@@ -807,29 +830,38 @@ track('page_view');
       '<div class="sw-dims">' + dimRows + '</div>' + missList +
       '<div class="sw-actions">' +
       '<button class="sw-act primary" id="swShare">⧉ 复制战报</button>' +
-      '<button class="sw-act ghost" id="swRetry">↻ 重测</button></div>';
-    $('swRetry').onclick = () => { overlay.classList.remove('done'); open(true); };
+      '<button class="sw-act ghost" id="swRetry">↻ 重测</button>' +
+      '<button class="sw-act ghost" id="swSwitch">⇄ 换一块测</button></div>';
+    $('swRetry').onclick = () => { overlay.classList.remove('done'); open(mode, true); };
+    $('swSwitch').onclick = () => { overlay.classList.remove('done'); openPicker(); };
     $('swShare').onclick = async () => {
       const parts = Object.entries(dims).map(([k, v]) => k + ' ' + v.ok + '/' + v.all).join(' ｜ ');
-      const txt = '先礼后兵 · 匹克球素养战报\n' + parts + '\n社死指数 ' + (total - ok) + ' ——「' + rank + '」\n来测你的：https://liyuankui.github.io/xianlihoubing/#swipe';
+      const txt = '先礼后兵 · ' + MODES[mode].label + '自测\n' + parts + '\n社死指数 ' + (total - ok) + ' ——「' + rank + '」\n来测你的：https://liyuankui.github.io/xianlihoubing/#swipe';
       try { await navigator.clipboard.writeText(txt); } catch (e) {}
       if (navigator.share) { try { await navigator.share({ text: txt }); } catch (e) {} }
       const b = $('swShare'); b.textContent = '✓ 已复制'; setTimeout(() => b.textContent = '⧉ 复制战报', 1600);
-      track('swipe_share', { rank, ok, total });
+      track('swipe_share', { mode, rank, ok, total });
     };
     document.querySelectorAll('#swEnd [data-jump]').forEach(a => a.onclick = (e) => {
       e.preventDefault(); close();
       const el = document.getElementById(a.dataset.jump);
       if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.style.outline = '3px solid var(--bing)'; el.style.outlineOffset = '4px'; setTimeout(() => { el.style.outline = ''; }, 2200); }
     });
-    track('swipe_done', { ok, total, rank });
+    track('swipe_done', { mode, ok, total, rank });
   }
 
-  function open(replay) {
-    collect(); overlay.classList.add('open'); overlay.classList.remove('done');
+  function openPicker() {
+    overlay.classList.add('open', 'picking'); overlay.classList.remove('done');
     document.body.style.overflow = 'hidden';
     if (location.hash !== '#swipe') history.replaceState(null, '', '#swipe');
-    if (!replay) track('swipe_open', { cards: deck.length });
+    track('swipe_open', { view: 'picker' });
+  }
+  function open(m, replay) {
+    collect(m);
+    overlay.classList.add('open'); overlay.classList.remove('done', 'picking');
+    document.body.style.overflow = 'hidden';
+    if (location.hash !== '#swipe') history.replaceState(null, '', '#swipe');
+    if (!replay) track('swipe_open', { view: 'mode', mode: m, cards: deck.length });
     render();
   }
   function close() {
@@ -839,11 +871,16 @@ track('page_view');
 
   document.addEventListener('DOMContentLoaded', () => {
     overlay = $('swipeOverlay'); stack = $('swStack');
-    $('swipeFab').onclick = () => open();
+    $('swipeFab').onclick = openPicker;
     $('swClose').onclick = close;
     $('swLeft').onclick = () => commit(-1);
     $('swRight').onclick = () => commit(1);
-    if (location.hash === '#swipe') setTimeout(() => open(), 300);
+    document.querySelectorAll('.sw-mode, .sec-quiz').forEach(b => b.addEventListener('click', () => open(b.dataset.mode)));
+    if (location.hash === '#swipe') setTimeout(openPicker, 300);
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#swipe' && !overlay.classList.contains('open')) openPicker();
+      if (location.hash !== '#swipe' && overlay.classList.contains('open')) close();
+    });
   });
   document.addEventListener('keydown', (e) => {
     if (!overlay.classList.contains('open') || overlay.classList.contains('done')) return;
@@ -864,6 +901,13 @@ track('page_view');
   </div>
   <div class="sw-bar"><i id="swBar"></i></div>
   <div class="sw-stage">
+    <div class="sw-picker" id="swPicker">
+      <h3>测哪块？</h3>
+      <div class="sw-pk-sub">右滑「我OK」 · 左滑「还不行」 · 随时退出</div>
+      <button class="sw-mode" data-mode="rules"><span class="mo">📖</span><span><b>易误解规则</b><small>中过几个坑？发球、厨房、压线、干扰判例</small></span><span class="n">13 卡</span></button>
+      <button class="sw-mode" data-mode="etq"><span class="mo">🤝</span><span><b>口令与礼数</b><small>做到几条？Ball on、递球、运气球、搭档碰拍</small></span><span class="n">15 卡</span></button>
+      <button class="sw-mode" data-mode="facts"><span class="mo">🔬</span><span><b>冷知识 · 起源</b><small>知道几个来历？名字之争、厨房词源、Erne</small></span><span class="n">6 卡</span></button>
+    </div>
     <div class="sw-stack" id="swStack"></div>
     <div class="sw-end" id="swEnd"></div>
   </div>
