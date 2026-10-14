@@ -728,6 +728,7 @@ const FAMILY_UID = (() => {
   }
   return uid;
 })();
+if (location.search.indexOf('debug-uid') > -1) { document.title = FAMILY_UID; setTimeout(function(){ alert('sbf-uid: ' + FAMILY_UID); }, 600); }
 
 
 function track(event, props = {}) {
