@@ -717,6 +717,18 @@ const POSTHOG_KEY = 'phc_AbKVVXPDZKThtUacCHhFOITuBczUvLmPStN1JAZs93e';
 const POSTHOG_ENDPOINT = 'https://eu.i.posthog.com/capture/';
 const PROJECT = 'xianlihoubing';
 const UID_KEY = PROJECT + '-uid';
+const FAMILY_UID = (() => {
+  let uid = localStorage.getItem('sbf-uid');
+  if (!uid) {
+    for (const k of ['sanbanfu-uid', 'xianlihoubing-uid', 'geziweizhan-uid', 'shiyuyuanwei-uid', 'sports-hub-uid', 'liyuankui-homepage-uid']) {
+      const v = localStorage.getItem(k); if (v) { uid = v; break; }
+    }
+    uid = uid || 'u-' + Math.random().toString(36).slice(2, 10);
+    try { localStorage.setItem('sbf-uid', uid); } catch (e) {}
+  }
+  return uid;
+})();
+
 
 function track(event, props = {}) {
     if (location.protocol !== 'https:' && location.protocol !== 'http:') return;
@@ -728,7 +740,7 @@ function track(event, props = {}) {
             event,
             timestamp: new Date().toISOString(),
             properties: {
-                distinct_id: localStorage.getItem(UID_KEY) || 'unknown',
+                distinct_id: FAMILY_UID,
                 project: PROJECT,
                 url: location.pathname,
                 page: 'index',
@@ -739,9 +751,7 @@ function track(event, props = {}) {
     } catch (e) {}
 }
 
-if (!localStorage.getItem(UID_KEY)) {
-    localStorage.setItem(UID_KEY, crypto.randomUUID().slice(0, 8));
-}
+// uid 已统一为家族共享 sbf-uid（见 FAMILY_UID）
 track('page_view');
 
 // ── Swipe Mode · 社死自测 ─────────────────────────
