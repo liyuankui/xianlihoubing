@@ -728,6 +728,27 @@ const FAMILY_UID = (() => {
   }
   return uid;
 })();
+// ── duration & scroll capture ──────────────────────
+(function () {
+  let acc = 0, vis = Date.now(), scrollPct = 0;
+  addEventListener('scroll', () => {
+    const d = document.documentElement, m = d.scrollHeight - innerHeight;
+    if (m > 0) scrollPct = Math.max(scrollPct, Math.round(Math.min(1, scrollY / m) * 100));
+  }, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      acc += Date.now() - vis;
+      try { track('page_leave', { dwell_ms: acc, scroll_pct: scrollPct }); } catch (e) {}
+    } else { vis = Date.now(); }
+  });
+  addEventListener('pagehide', () => {
+    if (document.visibilityState !== 'hidden') {
+      acc += Date.now() - vis;
+      try { track('page_leave', { dwell_ms: acc, scroll_pct: scrollPct }); } catch (e) {}
+    }
+  });
+})();
+
 if (location.search.indexOf('debug-uid') > -1) { document.title = FAMILY_UID; setTimeout(function(){ alert('sbf-uid: ' + FAMILY_UID); }, 600); }
 
 

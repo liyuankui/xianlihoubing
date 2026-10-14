@@ -6,6 +6,7 @@
 | 事件 | 触发 | 属性 |
 |------|------|------|
 | `page_view` | 页面加载 | `page=index`，`ref`（来路域名） |
+| `page_leave` | `dwell_ms`（累计可见毫秒）· `scroll_pct`（最大滚动 0-100） | 页面隐藏/关闭时上报——时长与首屏留存 |
 | `nav_click` | 顶部导航跳板块 | `to` ∈ {radar, rules, why, etiquette, china} |
 | `share_copy` | 复制分享文案 | — |
 
