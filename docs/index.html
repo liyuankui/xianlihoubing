@@ -749,7 +749,13 @@ const FAMILY_UID = (() => {
   });
 })();
 
-if (location.search.indexOf('debug-uid') > -1) { document.title = FAMILY_UID; setTimeout(function(){ alert('sbf-uid: ' + FAMILY_UID); }, 600); }
+if (location.search.indexOf('debug-uid') > -1) {
+  document.title = FAMILY_UID;
+  var dbg = document.createElement('div');
+  dbg.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#bf3a26;color:#fff;font-size:18px;font-weight:900;text-align:center;padding:14px;font-family:monospace';
+  dbg.textContent = 'sbf-uid: ' + FAMILY_UID;
+  document.body.appendChild(dbg);
+}
 
 
 function track(event, props = {}) {
